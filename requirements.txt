@@ -7,7 +7,6 @@ requests
 requests_html
 datetime
 PyPortfolioOpt
-pypfopt
 altair
 plotly
 streamlit
