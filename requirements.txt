@@ -10,3 +10,4 @@ PyPortfolioOpt
 altair
 plotly
 streamlit
+scikit-learn
