@@ -1,0 +1,13 @@
+pandas
+matplotlib
+numpy
+yfinance
+yahooquery
+requests
+requests_html
+datetime
+PyPortfolioOpt
+pypfopt
+altair
+plotly
+streamlit
