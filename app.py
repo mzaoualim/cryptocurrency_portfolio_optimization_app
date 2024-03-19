@@ -44,9 +44,10 @@ def fed_rate():
     '''
     # Scrapping the current FED interest rate:
     all_data = pd.read_html('https://www.global-rates.com/en/interest-rates/central-banks/central-bank-america/fed-interest-rate.aspx')
-    FED = [df for df in all_data if df.iloc[0][0] == 'American interest rate (Fed)'][0].iloc[0][1]
+    # FED = [df for df in all_data if df.iloc[0][0] == 'American interest rate (Fed)'][0].iloc[0][1]
+    FED = float((all_data[0].iloc[0, 1])[:-2])
     # Formating into float
-    return float(FED[:5])/100
+    return FED #float(FED[:5])/100
 
 def optimized_ratios(data, start_date, end_date, safe):
     '''
