@@ -157,13 +157,13 @@ def app_exec():
     try:
          safe = fed_rate()
     except:
-         safe = 0.03
+         safe = 3.00
     
     risk_free_rate = st.number_input('Define the Risk Free Rate',
                                      min_value= 0.00,
                                      max_value= None,
                                     #  value= fed_rate(),
-                                    value = safe
+                                    value = safe/100
                                      )
 
     # Initial Investement
