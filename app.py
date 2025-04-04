@@ -162,7 +162,9 @@ def app_exec():
     risk_free_rate = st.number_input('Define the Risk Free Rate',
                                      min_value= 0.00,
                                      max_value= None,
-                                     value= fed_rate())
+                                    #  value= fed_rate(),
+                                    value = safe
+                                     )
 
     # Initial Investement
     initial_invest = st.number_input('What is your initial investment? (USD)',
@@ -173,7 +175,7 @@ def app_exec():
     # Backend variables
     data = get_data(selected_tickers, start_date, end_date)
     returns = data.pct_change()[1:]
-    opt_ratio = optimized_ratios(data, start_date, end_date, safe)
+    opt_ratio = optimized_ratios(data, start_date, end_date, risk_free_rate)
     opt_d_ret = pd.Series((opt_ratio * returns).sum(axis= 1), name='Optimized Daily Returns')
     opt_c_ret = pd.Series((1+ opt_d_ret).cumprod()-1, name='Optimized Cumulative Returns')
     ben_ratio = [(1/len(selected_tickers)) for i in selected_tickers]
