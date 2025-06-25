@@ -11,3 +11,4 @@ altair
 plotly
 streamlit
 scikit-learn
+lxml[html_clean]
